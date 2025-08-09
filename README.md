@@ -1,13 +1,13 @@
-# Scriptly
+# Scriptly - AI-Powered Speech-to-Text Converter
 
-Scriptly is a sleek and modern desktop application developed with Electron.js. Users can upload videos, receive an "uploaded" notification after the upload, and click the "Send" button to send the video to the backend. On the backend, the video’s audio is transcribed to text using Python Flask and OpenAI Whisper, and the result is displayed in the interface.
+Scriptly is a cutting-edge desktop application that automatically transcribes speech from video and audio files into English text using advanced AI technology. Perfect for content creators, journalists, students, and professionals who need accurate speech-to-text conversion.
 
 
 ## Features
-- Sleek and modern Electron.js interface
-- Video upload with upload notification
-- Send button to transmit video to backend
-- Automatic (audio/video)-to-text with Whisper
+- 🎤 AI-Powered Transcription - Leverages OpenAI Whisper for precise English transcription
+- 🖥️ Modern Desktop App - Built with Electron.js for smooth performance
+- 📁 Multi-Format Support - Works with MP4, MOV, MP3, WAV and other common formats
+- ⚡ One-Click Processing - Simple "Submit" button to start conversion
 
 ## Installation
 Instructions for project build by order:
@@ -33,14 +33,22 @@ npm run start
 npm run build
 ```
 
-## Backend (Flask + Whisper)
-- A `backend/` folder will be created and Flask + Whisper integration will be implemented there.
-- Once the backend is running, it will communicate with the Electron interface.
+## Technical Highlights
+-Python Flask Backend for reliable processing
+-Whisper AI Integration for industry-leading accuracy
+-Cross-Platform - Works on Windows, Mac, and Linux
 
-
-## Notlar
+## Notes
 - For Whisper integration, the Python environment requires the `openai-whisper` and `flask` packages.
 - The "Send" button in the interface will function properly once the backend is ready.
+
+Perfect for:
+✅ Content creators needing transcripts
+✅ Journalists converting interviews to text
+✅ Students transcribing lectures
+✅ Professionals creating meeting notes
+
+"Turn spoken words into written text with AI precision - no manual typing required!"
 
 ---
 More information and backend integration details will be added to the README.
