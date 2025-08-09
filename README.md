@@ -43,7 +43,7 @@ npm run build
 - For Whisper integration, the Python environment requires the `openai-whisper` and `flask` packages.
 - The "Send" button in the interface will function properly once the backend is ready.
 
-Perfect for:
+Perfect for:<br />
 ✅ Content creators needing transcripts<br />
 ✅ Journalists converting interviews to text<br />
 ✅ Students transcribing lectures<br />
