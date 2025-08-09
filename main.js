@@ -127,8 +127,41 @@ ipcMain.handle('send-video', async (event, videoPath) => {
   }
 });
 
-ipcMain.on('app-quit', (event, info) => {
+ipcMain.on("app-quit", (event, info) => {
   if (backendProcess) {
-    try { process.kill(-backendProcess.pid); } catch (e) {}
+    try {
+      process.kill(-backendProcess.pid);
+    } catch (e) {
+      console.error("Error killing backendProcess:", e);
+    }
   }
+
+  exec(
+    'tasklist /FI "IMAGENAME eq backend-scriptly.exe"',
+    (err, stdout, stderr) => {
+      if (err) {
+        console.error("Error while listing processes:", err);
+        return;
+      }
+      if (stderr) {
+        console.error("stderr:", stderr);
+        return;
+      }
+
+      const processes = stdout.split("\n").slice(3);
+      processes.forEach((line) => {
+        if (line.includes("backend-scriptly.exe")) {
+          const pid = line.split(/\s+/)[1];
+          if (pid) {
+            try {
+              process.kill(pid);
+              console.log(`Killed process with PID: ${pid}`);
+            } catch (e) {
+              console.error(`Failed to kill process with PID: ${pid}`, e);
+            }
+          }
+        }
+      });
+    }
+  );
 });

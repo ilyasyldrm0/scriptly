@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=800, initial-scale=1.0">
-  <title>Scriptly - Video'dan Yazıya</title>
+  <title>Scriptly - From Video to Text</title>
   <link rel="stylesheet" href="style.css">
   <style>
     #loading {
@@ -20,22 +20,22 @@
   </style>
 </head>
 <body>
-  <div id="loading">Yükleniyor...</div>
+  <div id="loading">Loading...</div>
 
   <div class="container">
     <h1>Scriptly</h1>
     <div class="upload-section">
-      <button id="selectVideoBtn">Video Yükle</button>
-      <span id="videoName">Henüz video seçilmedi</span>
+      <button id="selectVideoBtn">Upload Video</button>
+      <span id="videoName">No video selected yet</span>
     </div>
     <div id="uploadStatus" class="status"></div>
-    <button id="sendBtn" disabled>Gönder</button>
+    <button id="sendBtn" disabled>Send</button>
     <div id="resultSection" class="result"></div>
   </div>
 
   <script src="renderer.js"></script>
   <script>
-    // Backend durumunu dinle
+    // Listen for backend status
     window.electronAPI.onBackendStatus((status) => {
       if (status === 'loading') {
         document.getElementById('loading').style.display = 'block';

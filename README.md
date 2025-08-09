@@ -35,19 +35,19 @@ npm run build
 ```
 
 ## Technical Highlights
--Python Flask Backend for reliable processing
--Whisper AI Integration for industry-leading accuracy
--Cross-Platform - Works on Windows, Mac, and Linux
+- Python Flask Backend for reliable processing
+- Whisper AI Integration for industry-leading accuracy
+- Cross-Platform - Works on Windows, Mac, and Linux
 
 ## Notes
 - For Whisper integration, the Python environment requires the `openai-whisper` and `flask` packages.
 - The "Send" button in the interface will function properly once the backend is ready.
 
 Perfect for:
-✅ Content creators needing transcripts
-✅ Journalists converting interviews to text
-✅ Students transcribing lectures
-✅ Professionals creating meeting notes
+✅ Content creators needing transcripts<br />
+✅ Journalists converting interviews to text<br />
+✅ Students transcribing lectures<br />
+✅ Professionals creating meeting notes <br />
 
 "Turn spoken words into written text with AI precision - no manual typing required!"
 
