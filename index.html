@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=800, initial-scale=1.0">
+  <title>Scriptly - Video'dan Yazıya</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #loading {
+      display: none;
+      font-size: 18px;
+      text-align: center;
+      margin-top: 20px;
+      color: #555;
+    }
+    .container {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">Yükleniyor...</div>
+
+  <div class="container">
+    <h1>Scriptly</h1>
+    <div class="upload-section">
+      <button id="selectVideoBtn">Video Yükle</button>
+      <span id="videoName">Henüz video seçilmedi</span>
+    </div>
+    <div id="uploadStatus" class="status"></div>
+    <button id="sendBtn" disabled>Gönder</button>
+    <div id="resultSection" class="result"></div>
+  </div>
+
+  <script src="renderer.js"></script>
+  <script>
+    // Backend durumunu dinle
+    window.electronAPI.onBackendStatus((status) => {
+      if (status === 'loading') {
+        document.getElementById('loading').style.display = 'block';
+        document.querySelector('.container').style.display = 'none';
+      } else if (status === 'ready') {
+        document.getElementById('loading').style.display = 'none';
+        document.querySelector('.container').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

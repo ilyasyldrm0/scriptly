@@ -1,0 +1,44 @@
+{
+  "name": "scriptly",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:backend": ".\\backend\\.venv\\scripts\\activate && pyinstaller --onefile --noconsole --add-data \".\\backend\\.venv\\Lib\\site-packages\\whisper\\assets;whisper/assets\" --recursive-copy-metadata \"openai-whisper\" backend/backend-scriptly.py",
+    "build:electron": "electron-builder",
+    "build": "npm run build:backend && npm run build:electron",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.scriptly.app",
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "renderer.js",
+      "style.css",
+      "node_modules/**"
+    ],
+    "extraResources": [
+      {
+        "from": "dist/backend-scriptly.exe",
+        "to": "backend-scriptly.exe"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "keywords": [],
+  "author": "ilyasyldrm0",
+  "license": "AGPL-3.0-only",
+  "description": "A simple program to extract text from videos using Whisper AI.",
+  "devDependencies": {
+    "electron": "^37.2.5",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "form-data": "^4.0.4"
+  }
+}

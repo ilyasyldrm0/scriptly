@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+av
+numpy
+openai-whisper
+soundfile
+pyinstaller
+flask
+flask_cors
