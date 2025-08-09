@@ -20,6 +20,7 @@ npm install
 2. In /project_dir/backend:
 ```
 python -m venv .venv
+./.venv/scripts/activate (for windows)
 pip install -r requirements.txt
 ```
 
